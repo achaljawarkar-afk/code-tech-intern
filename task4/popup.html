@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>Time Tracker</h3>
+  <div id="data"></div>
+
+  <script>
+    chrome.storage.local.get("timeSpent", (result) => {
+      const data = result.timeSpent || {};
+      let html = "";
+      for (let site in data) {
+        html += `<p>${site} : ${data[site]} sec</p>`;
+      }
+      document.getElementById("data").innerHTML = html;
+    });
+  </script>
+</body>
+</html>
