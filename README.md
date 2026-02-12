@@ -1,1 +1,0 @@
-# code-tech-intern
